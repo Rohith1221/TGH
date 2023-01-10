@@ -16,6 +16,7 @@ function Bookmarks(props) {
             <div className="qb_secondLine">
               <div className="qb_author">-{item.author}</div>
               <div className="qb_bookmark"></div>
+              <br></br>
             </div>
             <button
               className="del_btn"
