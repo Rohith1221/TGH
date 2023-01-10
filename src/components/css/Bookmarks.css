@@ -1,0 +1,15 @@
+.del_btn {
+  position: relative;
+  float: right;
+  display: flex;
+  bottom: 23px;
+  right: 10px;
+  color: #eee;
+  outline: none;
+  border-radius: 15px;
+  border: none;
+  padding: 5px 10px;
+  background-color: rgb(108, 24, 147);
+  box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
