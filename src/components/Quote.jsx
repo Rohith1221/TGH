@@ -41,9 +41,8 @@ function Quote() {
   //   currQuote: {},
   //   tags: [],
 
-  const { currQuote, tags, loadingTags, selectedtag, bookmarks } = useSelector(
-    (state) => state.quoteReducer
-  );
+  const { currQuote, tags, loadingTags, selectedtag, bookmarks, loading } =
+    useSelector((state) => state.quoteReducer);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -55,11 +54,18 @@ function Quote() {
   return (
     <div>
       <div className="quote_box" sx={{ width: "500px" }}>
-        <p className="qb_quote">{currQuote.content}</p>
+        {/* <p className="qb_quote">{currQuote.content}</p> */}
+        <p className="qb_quote">
+          {loading ? <i>loading ...</i> : currQuote.content}
+        </p>
         <div className="qb_secondLine">
-          <div className="qb_author">-{currQuote.author}</div>
+          <div className="qb_author">
+            {loading ? "" : "-" + currQuote.author}
+          </div>
           <div className="qb_bookmark">
-            <BookmarkAddIcon onClick={() => dispatch(SaveBookmarks())} />
+            {!loading && (
+              <BookmarkAddIcon onClick={() => dispatch(SaveBookmarks())} />
+            )}
           </div>
           {/* <p className="qb_bookmark"></p> */}
         </div>

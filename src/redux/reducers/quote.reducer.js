@@ -8,7 +8,7 @@ import {
   deleteBookmark,
 } from "../actions/quote.action";
 const initialState = {
-  loading: false,
+  loading: true,
   loadingTags: false,
   error: { message: "" },
   count: 0,
